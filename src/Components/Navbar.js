@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#1F2937] text-white">
-      <div className="navbar mx-auto px-4 sm:px-6 lg:px-8 max-w-[1440px]">
+      <div className="navbar mx-auto sm:px-6 lg:px-0 max-w-[1440px]">
         <button
           onClick={toggleMenu}
           className="sm:hidden block text-2xl focus:outline-none">
@@ -21,19 +22,19 @@ const Navbar = () => {
         <div className="flex flex-1">
           <ul className={`menu menu-horizontal px-1 lg:flex hidden`}>
             <li>
-              <a>Dashboard</a>
+              <NavLink to="/">Dashboard</NavLink>
             </li>
             <li>
-              <a>Master Price</a>
+              <NavLink to="/master-price">Master Price</NavLink>
             </li>
             <li>
-              <a>Custom Price</a>
+              <NavLink to="/custom-price">Custom Price</NavLink>
             </li>
             <li>
-              <a>Calendar</a>
+              <NavLink to="/calender">Calendar</NavLink>
             </li>
             <li>
-              <a>Reports</a>
+              <NavLink to="/report">Reports</NavLink>
             </li>
           </ul>
         </div>
